@@ -65,7 +65,7 @@ const addEmployee = async () => {
 
 const addRole = async () => {
     const [departmentData] = await selectAll('department');
-    const [roleData] = await selectAll('role');
+    
     const departments = departmentData.map(department => {
         return {
             name: department.name,
@@ -124,17 +124,14 @@ const chooseOption = async (type) => {
         }
         case 'Add Employee': {
             await addEmployee();
-            init();
             break;
         }
         case 'Add Department': {
             await addDepartment();
-            init();
             break;
         }
         case 'Add Role': {
             await addRole();
-            init();
             break;
         }
         
